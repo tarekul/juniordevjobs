@@ -7,3 +7,4 @@ Full Stack application that lists jobs that are for junior developers.
 - React and Material-UI is used to build the frontend of the application.
 
 ### App demo
+![](https://github.com/tarekul/juniordevjobs/blob/master/entryleveljobdemo.gif)
