@@ -1,3 +1,8 @@
+.App {
+  background-color: rgb(56, 62, 63);
+  width: 80%;
+  padding: 20px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -25,7 +30,12 @@
 }
 
 body {
-  margin: 20px 40px;
+  background-color: rgb(77, 162, 183);
+}
+
+.heading {
+  font-family: "Courier New";
+  color: white;
 }
 
 .job {
@@ -46,6 +56,15 @@ body {
 .job:hover {
   cursor: pointer;
   color: #666666;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  position: fixed;
+  left: 1070px;
+  top: 300px;
 }
 
 .detail_logo {

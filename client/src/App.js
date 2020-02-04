@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <Jobs jobs={joblist} />
+      {joblist.length !== 0 ? <Jobs jobs={joblist} /> : ""}
     </div>
   );
 }
