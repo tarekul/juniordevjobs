@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import JobModal from "./JobModal";
 import { Typography, Paper } from "@material-ui/core";
 

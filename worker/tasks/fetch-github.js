@@ -13,7 +13,7 @@ async function fetchGithub() {
   let onPage = 0;
   const allJobs = [];
   while (resultCount > 0) {
-    const res = await fetch(`${baseURL}?page=${onPage}`);
+    const res = await fetch(`${baseURL}?location=united_states&page=${onPage}`);
     const jobs = await res.json();
     allJobs.push(...jobs);
     resultCount = jobs.length;
@@ -32,18 +32,35 @@ async function fetchGithub() {
       jobTitle.includes("senior") ||
       jobTitle.includes("manager") ||
       jobTitle.includes("sr.") ||
+      jobTitle.includes("sr") ||
       jobTitle.includes("architect")
     )
       return false;
-
+    else if (
+      job.description.includes("3-5") ||
+      job.description.includes("4-5") ||
+      job.description.includes("5+") ||
+      job.description.includes("4+") ||
+      job.description.includes("8-12")
+    )
+      return false;
     return true;
   });
 
   console.log("filtered down to ", jrJobs.length);
+  jrJobs.sort((a, b) => {
+    const a_time = new Date(a.created_at);
+    const b_time = new Date(b.created_at);
+
+    return b_time - a_time;
+  });
+
   //set in redis
   const success = await setAsync("github", JSON.stringify(jrJobs));
 
   console.log({ success });
 }
+
+//fetchGithub();
 
 module.exports = fetchGithub;

@@ -16,9 +16,6 @@ export default function JobModal(props) {
   if (!job.title) return <div />;
   return (
     <div>
-      {/* <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Slide in alert dialog
-      </Button> */}
       <Dialog
         open={open}
         TransitionComponent={Transition}
@@ -30,8 +27,11 @@ export default function JobModal(props) {
         <DialogTitle id="alert-dialog-slide-title">
           <div className="modalTitle">
             {`${job.title} - ${job.company}`}
-
-            <img src={job.company_logo} className="detail_logo" />
+            {job.company_logo ? (
+              <img src={job.company_logo} className="detail_logo" alt="logo" />
+            ) : (
+              ""
+            )}
           </div>
         </DialogTitle>
         <DialogContent>
@@ -45,7 +45,7 @@ export default function JobModal(props) {
           <Button onClick={props.handleClose} color="primary">
             Close
           </Button>
-          <a href={job.url} target="_blank">
+          <a href={job.url} target="_blank" rel="noopener noreferrer">
             <Button color="primary">Apply</Button>
           </a>
         </DialogActions>
