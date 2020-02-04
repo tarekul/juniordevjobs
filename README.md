@@ -8,3 +8,11 @@ Full Stack application that lists jobs that are for junior developers.
 
 ### App demo
 ![](https://github.com/tarekul/juniordevjobs/blob/master/entryleveljobdemo.gif)
+
+## HOW TO RUN APPLICATION
+Clone the app to local than on open terminal and open two terminal tabs. 
+On root directory run the command npm install
+On the client directory run npm install.
+Open two terminal tabs
+On first tab from the root directory run Node api/index.js
+On second tab run npm start from client directory
